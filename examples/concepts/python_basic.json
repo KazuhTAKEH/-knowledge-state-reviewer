@@ -18,5 +18,10 @@
     "concept_id": "loop",
     "label": "繰り返し",
     "description": "forやwhileを使って同じ処理を複数回実行する構造"
+  },
+  {
+    "concept_id": "condition",
+    "label": "条件分岐 if文 conditional branch",
+    "description": "if文を使って条件に応じて実行する処理を切り替える構造"
   }
 ]

@@ -83,6 +83,8 @@ class ArtifactAnalyzer:
             concepts.add("function_call")
         if self._contains_any(lowered, ["loop", "for", "while", "繰り返し"]):
             concepts.add("loop")
+        if self._contains_any(lowered, ["if文", "if ", "条件分岐", "条件"]):
+            concepts.add("condition")
         if len([p for p in re.split(r"\n\s*\n", text.strip()) if p]) >= 2:
             concepts.add("paragraph_structure")
 
