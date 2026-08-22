@@ -1,0 +1,21 @@
+{
+  "learner_level": "beginner_python",
+  "concept_mastery": {
+    "function": 0.2,
+    "function_call": 0.35,
+    "return_value": 0.15,
+    "loop": 0.45,
+    "condition": 0.5,
+    "class": 0.05,
+    "plain_explanation": 0.65
+  },
+  "misconceptions": [
+    "return と print を同じものだと思いやすい",
+    "引数を入力欄のように捉えやすい"
+  ],
+  "feedback_style": {
+    "directness": "low",
+    "scaffolding": "high",
+    "give_answer": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "learner_level": "beginner_writing",
+  "concept_mastery": {
+    "claim": 0.45,
+    "evidence": 0.25,
+    "counterargument": 0.1,
+    "conclusion": 0.4,
+    "paragraph_structure": 0.55,
+    "plain_explanation": 0.7
+  },
+  "misconceptions": [
+    "具体例を置けば根拠として十分だと思いやすい",
+    "要約と主張を混同しやすい"
+  ],
+  "feedback_style": {
+    "directness": "medium",
+    "scaffolding": "high",
+    "give_answer": false
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "concept_id": "claim",
+    "label": "主張",
+    "description": "文章で読者に受け入れてほしい中心的な考え"
+  },
+  {
+    "concept_id": "evidence",
+    "label": "根拠",
+    "description": "主張を支える理由、データ、具体例、引用"
+  },
+  {
+    "concept_id": "counterargument",
+    "label": "反論",
+    "description": "自分の主張に対して想定される異なる見方や批判"
+  },
+  {
+    "concept_id": "conclusion",
+    "label": "結論",
+    "description": "本文で示した根拠から導かれる最終的な判断"
+  }
+]

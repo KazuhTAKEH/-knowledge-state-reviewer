@@ -1,0 +1,22 @@
+[
+  {
+    "concept_id": "function",
+    "label": "関数",
+    "description": "処理に名前を付け、必要に応じて引数を受け取り再利用できるようにする仕組み"
+  },
+  {
+    "concept_id": "function_call",
+    "label": "関数呼び出しと引数",
+    "description": "定義済みの関数を実行し、値を渡す操作"
+  },
+  {
+    "concept_id": "return_value",
+    "label": "戻り値 return",
+    "description": "関数の処理結果を呼び出し元に返す仕組み。printとは異なる"
+  },
+  {
+    "concept_id": "loop",
+    "label": "繰り返し",
+    "description": "forやwhileを使って同じ処理を複数回実行する構造"
+  }
+]

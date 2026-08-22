@@ -1,0 +1,13 @@
+[project]
+name = "knowledge-state-reviewer"
+version = "0.1.0"
+description = "Knowledge-state-conditioned feedback engine for reports and pedagogical dialogue conversion."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+ksr = "ksr.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

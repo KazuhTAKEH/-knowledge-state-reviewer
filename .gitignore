@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Research data and generated outputs
+papers/
+outputs/
+colab_outputs/*
+!colab_outputs/README.md
+experiments/*
+!experiments/README.md
+
+# Model artifacts
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Secrets
+.env
+*.token
