@@ -81,10 +81,13 @@ After the starter notebook passes, test an arbitrary monologue by writing it to
 This writes:
 
 - `colab_outputs/latest_alignment.json`
+- `colab_outputs/latest_dialogue_plan.json`
 - `colab_outputs/latest_dialogue.md`
 
 Use `latest_alignment.json` to inspect whether BERT mapped the input phrases to
-the intended DKT-side concept IDs before trusting the generated dialogue.
+the intended DKT-side concept IDs before trusting the generated dialogue. Use
+`latest_dialogue_plan.json` to inspect whether generated learner reactions are
+conditioned on the expected learner-state gaps.
 
 ## Design Rule
 

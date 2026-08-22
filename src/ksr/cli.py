@@ -25,6 +25,7 @@ def main(argv: list[str] | None = None) -> int:
     dialogue.add_argument("--input", required=True)
     dialogue.add_argument("--profile", required=True)
     dialogue.add_argument("--artifact-type", default="auto", choices=["auto", "text", "code"])
+    dialogue.add_argument("--show-plan", action="store_true", help="Print the reproducible dialogue plan before the draft.")
 
     args = parser.parse_args(argv)
     text = Path(args.input).read_text(encoding="utf-8")
@@ -53,6 +54,8 @@ def main(argv: list[str] | None = None) -> int:
             gaps=gaps,
             profile=profile,
         )
+        if args.show_plan:
+            print(result.plan.to_json())
         print(result.to_markdown())
         return 0
 

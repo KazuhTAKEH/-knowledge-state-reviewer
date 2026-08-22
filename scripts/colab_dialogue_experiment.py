@@ -90,10 +90,15 @@ def main() -> int:
         dialogue.to_markdown(),
         encoding="utf-8",
     )
+    (output_dir / "latest_dialogue_plan.json").write_text(
+        dialogue.plan.to_json(),
+        encoding="utf-8",
+    )
 
     print(json.dumps(alignment_payload, ensure_ascii=False, indent=2))
     print("\nWrote:")
     print(f"- {output_dir / 'latest_alignment.json'}")
+    print(f"- {output_dir / 'latest_dialogue_plan.json'}")
     print(f"- {output_dir / 'latest_dialogue.md'}")
     return 0 if alignment_payload["ok"] else 1
 
