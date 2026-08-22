@@ -65,6 +65,27 @@ input phrase
   -> feedback/dialogue engine
 ```
 
+## Custom Monologue Experiment
+
+After the starter notebook passes, test an arbitrary monologue by writing it to
+`colab_outputs/custom_monologue.txt` and running:
+
+```python
+!PYTHONPATH=src PYTHONIOENCODING=utf-8 python scripts/colab_dialogue_experiment.py \
+  --input colab_outputs/custom_monologue.txt \
+  --profile examples/profiles/beginner_python.json \
+  --concepts examples/concepts/python_basic.json \
+  --bert
+```
+
+This writes:
+
+- `colab_outputs/latest_alignment.json`
+- `colab_outputs/latest_dialogue.md`
+
+Use `latest_alignment.json` to inspect whether BERT mapped the input phrases to
+the intended DKT-side concept IDs before trusting the generated dialogue.
+
 ## Design Rule
 
 Colab notebooks should be thin orchestration layers. Any reusable logic belongs
