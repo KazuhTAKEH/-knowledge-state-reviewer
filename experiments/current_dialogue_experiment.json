@@ -1,0 +1,9 @@
+{
+  "name": "current_dialogue_experiment",
+  "input": "experiments/current_monologue.txt",
+  "profile": "examples/profiles/beginner_python.json",
+  "concepts": "examples/concepts/python_basic.json",
+  "use_bert": true,
+  "threshold": 0.4,
+  "output_dir": "colab_outputs"
+}

@@ -31,13 +31,24 @@ def load_concepts(path: Path) -> list[ConceptCandidate]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", required=True, help="Path to monologue text.")
+    parser.add_argument("--config", help="Path to experiment config JSON.")
+    parser.add_argument("--input", help="Path to monologue text.")
     parser.add_argument("--profile", default="examples/profiles/beginner_python.json")
     parser.add_argument("--concepts", default="examples/concepts/python_basic.json")
     parser.add_argument("--bert", action="store_true")
     parser.add_argument("--threshold", type=float, default=None)
     parser.add_argument("--output-dir", default="colab_outputs")
     args = parser.parse_args()
+    if args.config:
+        config = json.loads((ROOT / args.config).read_text(encoding="utf-8"))
+        args.input = config["input"]
+        args.profile = config.get("profile", args.profile)
+        args.concepts = config.get("concepts", args.concepts)
+        args.bert = bool(config.get("use_bert", args.bert))
+        args.threshold = config.get("threshold", args.threshold)
+        args.output_dir = config.get("output_dir", args.output_dir)
+    if not args.input:
+        parser.error("--input is required unless --config is provided")
 
     input_path = ROOT / args.input
     profile_path = ROOT / args.profile

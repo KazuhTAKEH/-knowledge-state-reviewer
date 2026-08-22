@@ -20,6 +20,9 @@ The two highest-priority applications are documented in
 The learner-state reproducibility principles are documented in
 `docs/reproducibility_principles.md`.
 
+The Colab-as-external-resource workflow is documented in
+`docs/colab_as_external_resource.md`.
+
 ## Quick Start
 
 ```powershell

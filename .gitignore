@@ -17,6 +17,8 @@ colab_outputs/*
 !colab_outputs/README.md
 experiments/*
 !experiments/README.md
+!experiments/current_monologue.txt
+!experiments/current_dialogue_experiment.json
 
 # Model artifacts
 checkpoints/
