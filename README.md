@@ -17,6 +17,9 @@ For Colab-oriented development and BERT-based concept alignment, see
 The two highest-priority applications are documented in
 `docs/priority_applications.md`.
 
+The learner-state reproducibility principles are documented in
+`docs/reproducibility_principles.md`.
+
 ## Quick Start
 
 ```powershell

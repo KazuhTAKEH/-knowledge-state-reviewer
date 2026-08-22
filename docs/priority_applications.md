@@ -110,3 +110,8 @@ Remote AI posture by application:
   dialogue quality, and system tuning when configured explicitly.
 - Report review: remote AI should be minimized because learner-specific data is
   more sensitive and communication costs scale with individualized use.
+
+Both applications should follow the reproducibility principles in
+`docs/reproducibility_principles.md`. In particular, inputs may be diverse and
+unknown, but outputs should remain reproducibly conditioned on the specified
+learner model.
