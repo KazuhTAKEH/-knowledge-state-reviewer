@@ -1,0 +1,93 @@
+{
+  "input": "colab_outputs/custom_monologue.txt",
+  "profile": "examples/profiles/beginner_python.json",
+  "concept_schema": "examples/concepts/python_basic.json",
+  "method": "bert",
+  "threshold": 0.4,
+  "phrases": [
+    "Pythonの関数は、複数の処理をひとまとまりにして名前を付ける方法です",
+    "Pythonの関数は、複数の処理をひとまとまりにして名",
+    "defで定義し、引数で値を受け取り、returnで計算結果を返します",
+    "defで定義し、引数で値を受け取り、ret",
+    "defで定義し、引数で値を受け取り、returnで計算結",
+    "printは画面に表示するだけなので、returnとは役割が違います",
+    "rintは画面に表示するだけなので、returnとは役割が違います",
+    "if文は条件分岐をする役割を持ちます"
+  ],
+  "artifact_concepts": [
+    "function",
+    "function_call",
+    "return_value"
+  ],
+  "aligned_concepts": [
+    "function",
+    "function_call",
+    "loop",
+    "return_value"
+  ],
+  "gap_concepts": [
+    "function",
+    "function_call",
+    "loop",
+    "return_value"
+  ],
+  "alignments": [
+    {
+      "input_phrase": "Pythonの関数は、複数の処理をひとまとまりにして名前を付ける方法です",
+      "concept_id": "function_call",
+      "label": "関数呼び出しと引数 parameter argument",
+      "score": 0.5318,
+      "method": "sentence-transformers:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    },
+    {
+      "input_phrase": "Pythonの関数は、複数の処理をひとまとまりにして名",
+      "concept_id": "loop",
+      "label": "繰り返し",
+      "score": 0.5921,
+      "method": "sentence-transformers:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    },
+    {
+      "input_phrase": "defで定義し、引数で値を受け取り、returnで計算結果を返します",
+      "concept_id": "function",
+      "label": "関数定義 def",
+      "score": 0.7346,
+      "method": "sentence-transformers:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    },
+    {
+      "input_phrase": "defで定義し、引数で値を受け取り、ret",
+      "concept_id": "function",
+      "label": "関数定義 def",
+      "score": 0.7529,
+      "method": "sentence-transformers:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    },
+    {
+      "input_phrase": "defで定義し、引数で値を受け取り、returnで計算結",
+      "concept_id": "function",
+      "label": "関数定義 def",
+      "score": 0.7748,
+      "method": "sentence-transformers:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    },
+    {
+      "input_phrase": "printは画面に表示するだけなので、returnとは役割が違います",
+      "concept_id": "return_value",
+      "label": "戻り値 return",
+      "score": 0.7635,
+      "method": "sentence-transformers:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    },
+    {
+      "input_phrase": "rintは画面に表示するだけなので、returnとは役割が違います",
+      "concept_id": "return_value",
+      "label": "戻り値 return",
+      "score": 0.4581,
+      "method": "sentence-transformers:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    },
+    {
+      "input_phrase": "if文は条件分岐をする役割を持ちます",
+      "concept_id": "loop",
+      "label": "繰り返し",
+      "score": 0.4323,
+      "method": "sentence-transformers:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    }
+  ],
+  "ok": true
+}

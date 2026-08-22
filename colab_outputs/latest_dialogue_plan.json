@@ -1,0 +1,42 @@
+{
+  "learner_level": "beginner_python",
+  "artifact_type": "text",
+  "items": [
+    {
+      "concept": "function",
+      "severity": "high",
+      "mastery": 0.2,
+      "student_intent": "ask_basic_meaning",
+      "teacher_strategy": "locate_term_then_student_rephrase",
+      "consistency_rule": "student must not use the concept as if already mastered"
+    },
+    {
+      "concept": "function_call",
+      "severity": "medium",
+      "mastery": 0.35,
+      "student_intent": "ask_contextual_role",
+      "teacher_strategy": "contextual_check_question",
+      "consistency_rule": "student may show partial familiarity but should ask for contextual grounding"
+    },
+    {
+      "concept": "loop",
+      "severity": "medium",
+      "mastery": 0.45,
+      "student_intent": "ask_contextual_role",
+      "teacher_strategy": "contextual_check_question",
+      "consistency_rule": "student may show partial familiarity but should ask for contextual grounding"
+    },
+    {
+      "concept": "return_value",
+      "severity": "high",
+      "mastery": 0.15,
+      "student_intent": "ask_basic_meaning",
+      "teacher_strategy": "locate_term_then_student_rephrase",
+      "consistency_rule": "student must not use the concept as if already mastered"
+    }
+  ],
+  "policy_notes": [
+    "Input may vary, but planned student reactions must follow the learner state.",
+    "Teacher responses should scaffold before giving final answers."
+  ]
+}
