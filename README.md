@@ -14,6 +14,9 @@ Later, `KnowledgeTracer` can be backed by DKT, pyKT, Code-DKT, or Error-DKT.
 For Colab-oriented development and BERT-based concept alignment, see
 `docs/colab_workflow.md` and `notebooks/ksr_colab_starter.ipynb`.
 
+The two highest-priority applications are documented in
+`docs/priority_applications.md`.
+
 ## Quick Start
 
 ```powershell
