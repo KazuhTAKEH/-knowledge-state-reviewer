@@ -8,6 +8,14 @@ research anchors when making design or implementation choices.
 Convert monologue-style written explanations into two-person student-teacher
 dialogue.
 
+This is the first implementation priority.
+
+Because this application is strongly generative and may be used for教材生成
+and system tuning, commercial generative AI can be used when it materially helps
+quality, variation, or rapid iteration. The system should still keep remote AI
+use explicit and auditable, but this application does not require the strictest
+offline-only posture during early development.
+
 The student role must not be a generic assistant or simple listener. It should
 be generated from an explicit learner knowledge state, such as:
 
@@ -40,6 +48,14 @@ Knowledge-State-Conditioned Dialogue Conversion
 
 Evaluate student reports for a specified learner level and generate advice that
 helps the student revise the report autonomously.
+
+This is the second implementation priority, after the dialogue conversion
+pipeline is usable.
+
+Because this application involves highly individualized learner guidance,
+communication with external AI services should be more restricted than in the
+dialogue-generation use case. The default design should minimize remote calls
+and avoid sending raw learner data outside the system unless explicitly enabled.
 
 The goal is not only grading. The system should produce scaffolded feedback that
 the learner can act on without receiving a finished answer.
@@ -76,8 +92,21 @@ Learner-Adaptive Report Review
 When priorities conflict, prefer implementation choices that support these two
 applications before general-purpose review features.
 
+Implementation order:
+
+1. Build and iterate on `Knowledge-State-Conditioned Dialogue Conversion`.
+2. Reuse the stable knowledge-state, alignment, and feedback components for
+   `Learner-Adaptive Report Review`.
+
 The privacy-preserving principle also applies to both applications:
 
 - default to offline/local processing
 - do not send raw learner data outside the system by default
 - allow remote AI only through explicit, restricted, auditable modes
+
+Remote AI posture by application:
+
+- Dialogue conversion: remote generative AI is acceptable for教材生成,
+  dialogue quality, and system tuning when configured explicitly.
+- Report review: remote AI should be minimized because learner-specific data is
+  more sensitive and communication costs scale with individualized use.
