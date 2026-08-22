@@ -26,6 +26,45 @@ knowledge-state-reviewer/
 7. Export small result samples to `examples/` or `experiments/`.
 8. Let Codex review, refactor, test, and document those changes locally.
 
+## Minimal Colab Test Program
+
+After cloning the repository in Colab, run the dependency-free smoke test first:
+
+```python
+%cd /content/-knowledge-state-reviewer
+!PYTHONPATH=src PYTHONIOENCODING=utf-8 python scripts/colab_smoke_test.py
+```
+
+Expected result:
+
+- `ok` is `true`
+- `artifact_concepts` includes concepts such as `function` and `return_value`
+- `gap_concepts` includes weak concepts from the learner profile
+- `colab_outputs/latest_smoke_test.json` is created
+
+Then install Colab dependencies and run the BERT/SentenceTransformer test:
+
+```python
+!pip install -q -r requirements-colab.txt
+!PYTHONPATH=src PYTHONIOENCODING=utf-8 python scripts/colab_smoke_test.py --bert
+```
+
+Expected result:
+
+- `ok` is `true`
+- at least two phrases align to DKT-side concept IDs
+- the `method` field starts with `sentence-transformers:`
+
+This confirms the planned pipeline:
+
+```text
+input phrase
+  -> BERT/SentenceTransformer embedding
+  -> DKT concept candidate
+  -> KnowledgeState concept ID
+  -> feedback/dialogue engine
+```
+
 ## Design Rule
 
 Colab notebooks should be thin orchestration layers. Any reusable logic belongs
