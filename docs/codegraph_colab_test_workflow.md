@@ -43,23 +43,23 @@ colab_outputs/latest_codegraph_test.md
 
 ### 3. 結果をGitHubへpush
 
-Colab の Secrets に `GH_TOKEN` を入れてから実行する。
+Colab の Secrets に `GITHUB_TOKEN` を入れてから実行する。
 
 ```python
 from google.colab import userdata
 import os
 
-token = userdata.get("GH_TOKEN")
-assert token, "Colab Secrets に GH_TOKEN を設定してください。"
+token = userdata.get("GITHUB_TOKEN")
+assert token, "Colab Secrets に GITHUB_TOKEN を設定してください。"
 
 repo = "KazuhTAKEH/-knowledge-state-reviewer"
 os.environ["GIT_AUTHOR_NAME"] = "Colab CodeGraph Test"
 os.environ["GIT_AUTHOR_EMAIL"] = "colab-codegraph-test@example.invalid"
 os.environ["GIT_COMMITTER_NAME"] = os.environ["GIT_AUTHOR_NAME"]
 os.environ["GIT_COMMITTER_EMAIL"] = os.environ["GIT_AUTHOR_EMAIL"]
-os.environ["GH_TOKEN"] = token
+os.environ["GITHUB_TOKEN"] = token
 
-!git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/{repo}.git
+!git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/{repo}.git
 !git add -f colab_outputs/latest_codegraph_test.json colab_outputs/latest_codegraph_test.md
 !git commit -m "Add latest CodeGraph Colab test output" || echo "No changes to commit"
 !git push origin HEAD:main
