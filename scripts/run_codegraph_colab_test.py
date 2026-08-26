@@ -141,7 +141,8 @@ def run_codegraph_probe() -> dict[str, Any]:
         "callees_sumSquaresJava": ["callees", "sumSquaresJava", "--json"],
         "callers_helperSquareJava": ["callers", "helperSquareJava", "--json"],
         "impact_normalizeNameTs": ["impact", "normalizeNameTs", "--depth", "2", "--json"],
-        "explore_loop": ["explore", "loop", "--json"],
+        # CodeGraph 1.5.0 exposes explore as text output; it does not accept --json.
+        "explore_loop": ["explore", "loop"],
     }
     relations = {
         name: run_command(codegraph_command(args), cwd=SAMPLE_ROOT, timeout=120)
@@ -217,6 +218,11 @@ def render_markdown(result: dict[str, Any]) -> str:
 
     lines.extend(
         [
+            "",
+            "## Compatibility Notes",
+            "",
+            "- `status`, `query`, `callers`, `callees`, and `impact` are tested with JSON output.",
+            "- `explore` is tested as text output because CodeGraph 1.5.0 does not accept `explore --json`.",
             "",
             "## Interpretation",
             "",
