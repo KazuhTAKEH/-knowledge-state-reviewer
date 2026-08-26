@@ -9,7 +9,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer",
       "returncode": 0,
-      "duration_sec": 0.158,
+      "duration_sec": 0.236,
       "stdout": "Usage: codegraph [options] [command]\n\nCode intelligence and knowledge graph for any codebase\n\nOptions:\n  -V, --version                  output the version number\n  --color                        force ANSI colors even when stdout is not a TTY\n  --no-color                     disable ANSI colors (NO_COLOR env is also\n                                 honored)\n  -h, --help                     display help for command\n\nCommands:\n  init [options] [path]          Initialize CodeGraph in a project directory and\n                                 build the initial index\n  uninit [options] [path]        Remove CodeGraph from a project (deletes\n                                 .codegraph/ directory)\n  index [options] [path]         Rebuild the full index from scratch (same\n                                 result as a fresh init)\n  sync [options] [path]          Sync changes since last index\n  status [options] [path]        Show index status and statistics\n  query [options] <search>       Search for symbols in the codebase\n  explore [options] <query...>   Explore an area: relevant symbols' source +\n                                 call paths in one shot (same output as the\n                                 codegraph_explore MCP tool)\n  node [options] [name]          One symbol's source + caller/callee trail, or\n                                 read a file with line numbers + dependents\n                                 (same output as the codegraph_node MCP tool)\n  files [options]                Show project file structure from the index\n  daemon|daemons                 Manage running CodeGraph background daemons —\n                                 pick one and press enter to stop it\n  unlock [path]                  Remove a stale lock file that is blocking\n                                 indexing\n  callers [options] <symbol>     Find all functions/methods that call a specific\n                                 symbol\n  callees [options] <symbol>     Find all functions/methods that a specific\n                                 symbol calls\n  impact [options] <symbol>      Analyze what code is affected by changing a\n                                 symbol\n  affected [options] [files...]  Find test files affected by changed source\n                                 files\n  install [options]              Install codegraph MCP server into one or more\n                                 agents (Claude Code, Cursor, Codex CLI,\n                                 opencode, Hermes Agent)\n  uninstall [options]            Remove codegraph from your agents (Claude Code,\n                                 Cursor, Codex CLI, opencode, Hermes Agent)\n  telemetry [action]             Show or change anonymous usage telemetry\n                                 (status, on, off)\n  upgrade [options] [version]    Update CodeGraph to the latest release (or a\n                                 specific version)\n  version                        Print the installed CodeGraph version (also:\n                                 -v, --version)\n  help [command]                 display help for command\n",
       "stderr": "",
       "ok": true
@@ -22,7 +22,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer",
       "returncode": 0,
-      "duration_sec": 2.461,
+      "duration_sec": 2.504,
       "stdout": "┌  Initializing CodeGraph\n│\n◆  Initialized in /content/-knowledge-state-reviewer/examples/codegraph_samples\n│\nScanning files...\nParsing code...\nResolving refs...\nLinking dynamic dispatch...\n│\n◆  Indexed 5 files\n│\n●  18 nodes, 20 edges in 1.1s\n│\n└  Done\n\n",
       "stderr": "codegraph collects anonymous usage stats (no code, paths, or names) — \"codegraph telemetry off\" or CODEGRAPH_TELEMETRY=0 disables. Details: https://github.com/colbymchenry/codegraph/blob/main/TELEMETRY.md\n",
       "ok": true
@@ -36,8 +36,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer",
       "returncode": 0,
-      "duration_sec": 0.568,
-      "stdout": "{\"initialized\":true,\"version\":\"1.5.0\",\"projectPath\":\"/content/-knowledge-state-reviewer/examples/codegraph_samples\",\"indexPath\":\"/content/-knowledge-state-reviewer/examples/codegraph_samples/.codegraph\",\"lastIndexed\":\"2026-08-26T09:51:52.565Z\",\"fileCount\":5,\"nodeCount\":18,\"edgeCount\":20,\"dbSizeBytes\":159744,\"backend\":\"node-sqlite\",\"journalMode\":\"wal\",\"nodesByKind\":{\"class\":1,\"file\":5,\"function\":8,\"import\":2,\"method\":2},\"languages\":[\"c\",\"java\",\"python\",\"typescript\"],\"pendingChanges\":{\"added\":0,\"modified\":0,\"removed\":0},\"worktreeMismatch\":null,\"index\":{\"builtWithVersion\":\"1.5.0\",\"builtWithExtractionVersion\":24,\"currentExtractionVersion\":24,\"reindexRecommended\":false,\"state\":\"complete\",\"pendingRefs\":0}}\n",
+      "duration_sec": 0.527,
+      "stdout": "{\"initialized\":true,\"version\":\"1.5.0\",\"projectPath\":\"/content/-knowledge-state-reviewer/examples/codegraph_samples\",\"indexPath\":\"/content/-knowledge-state-reviewer/examples/codegraph_samples/.codegraph\",\"lastIndexed\":\"2026-08-26T10:45:37.079Z\",\"fileCount\":5,\"nodeCount\":18,\"edgeCount\":20,\"dbSizeBytes\":159744,\"backend\":\"node-sqlite\",\"journalMode\":\"wal\",\"nodesByKind\":{\"class\":1,\"file\":5,\"function\":8,\"import\":2,\"method\":2},\"languages\":[\"c\",\"java\",\"python\",\"typescript\"],\"pendingChanges\":{\"added\":0,\"modified\":0,\"removed\":0},\"worktreeMismatch\":null,\"index\":{\"builtWithVersion\":\"1.5.0\",\"builtWithExtractionVersion\":24,\"currentExtractionVersion\":24,\"reindexRecommended\":false,\"state\":\"complete\",\"pendingRefs\":0}}\n",
       "stderr": "",
       "ok": true
     }
@@ -54,8 +54,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.507,
-      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:e6ef4d6ab6bfea2d0924cfebe1753153\",\n      \"kind\": \"function\",\n      \"name\": \"loop_sum_c\",\n      \"qualifiedName\": \"loop_sum_c\",\n      \"filePath\": \"c/sum_loop.c\",\n      \"language\": \"c\",\n      \"startLine\": 3,\n      \"endLine\": 9,\n      \"startColumn\": 0,\n      \"endColumn\": 1,\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912572\n    },\n    \"score\": 108.17504662984189\n  }\n]\n",
+      "duration_sec": 0.341,
+      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:e6ef4d6ab6bfea2d0924cfebe1753153\",\n      \"kind\": \"function\",\n      \"name\": \"loop_sum_c\",\n      \"qualifiedName\": \"loop_sum_c\",\n      \"filePath\": \"c/sum_loop.c\",\n      \"language\": \"c\",\n      \"startLine\": 3,\n      \"endLine\": 9,\n      \"startColumn\": 0,\n      \"endColumn\": 1,\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137084\n    },\n    \"score\": 108.17504662984189\n  }\n]\n",
       "stderr": "",
       "ok": true
     },
@@ -70,8 +70,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.528,
-      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:cc27fb956f2816ae66bb1fd150b36781\",\n      \"kind\": \"function\",\n      \"name\": \"max_with_branch_c\",\n      \"qualifiedName\": \"max_with_branch_c\",\n      \"filePath\": \"c/max_with_branch.c\",\n      \"language\": \"c\",\n      \"startLine\": 3,\n      \"endLine\": 8,\n      \"startColumn\": 0,\n      \"endColumn\": 1,\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912558\n    },\n    \"score\": 106.9444686250558\n  },\n  {\n    \"node\": {\n      \"id\": \"file:c/max_with_branch.c\",\n      \"kind\": \"file\",\n      \"name\": \"max_with_branch.c\",\n      \"qualifiedName\": \"c/max_with_branch.c\",\n      \"filePath\": \"c/max_with_branch.c\",\n      \"language\": \"c\",\n      \"startLine\": 1,\n      \"endLine\": 14,\n      \"startColumn\": 0,\n      \"endColumn\": 0,\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912558\n    },\n    \"score\": 31.87001000034606\n  }\n]\n",
+      "duration_sec": 0.356,
+      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:cc27fb956f2816ae66bb1fd150b36781\",\n      \"kind\": \"function\",\n      \"name\": \"max_with_branch_c\",\n      \"qualifiedName\": \"max_with_branch_c\",\n      \"filePath\": \"c/max_with_branch.c\",\n      \"language\": \"c\",\n      \"startLine\": 3,\n      \"endLine\": 8,\n      \"startColumn\": 0,\n      \"endColumn\": 1,\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137066\n    },\n    \"score\": 106.9444686250558\n  },\n  {\n    \"node\": {\n      \"id\": \"file:c/max_with_branch.c\",\n      \"kind\": \"file\",\n      \"name\": \"max_with_branch.c\",\n      \"qualifiedName\": \"c/max_with_branch.c\",\n      \"filePath\": \"c/max_with_branch.c\",\n      \"language\": \"c\",\n      \"startLine\": 1,\n      \"endLine\": 14,\n      \"startColumn\": 0,\n      \"endColumn\": 0,\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137066\n    },\n    \"score\": 31.87001000034606\n  }\n]\n",
       "stderr": "",
       "ok": true
     },
@@ -86,8 +86,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.578,
-      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:eb1c0e137fb68b01a025da168d1f8812\",\n      \"kind\": \"function\",\n      \"name\": \"classify_grade_py\",\n      \"qualifiedName\": \"classify_grade_py\",\n      \"filePath\": \"python/branch_grade.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 6,\n      \"startColumn\": 0,\n      \"endColumn\": 14,\n      \"signature\": \"(score: int) -> str\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912574\n    },\n    \"score\": 108.11553518546862\n  }\n]\n",
+      "duration_sec": 0.366,
+      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:eb1c0e137fb68b01a025da168d1f8812\",\n      \"kind\": \"function\",\n      \"name\": \"classify_grade_py\",\n      \"qualifiedName\": \"classify_grade_py\",\n      \"filePath\": \"python/branch_grade.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 6,\n      \"startColumn\": 0,\n      \"endColumn\": 14,\n      \"signature\": \"(score: int) -> str\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137087\n    },\n    \"score\": 108.11553518546862\n  }\n]\n",
       "stderr": "",
       "ok": true
     },
@@ -102,8 +102,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.369,
-      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:2c65442720cc7ae911ad9c12718c9fb9\",\n      \"kind\": \"function\",\n      \"name\": \"summarize_scores_py\",\n      \"qualifiedName\": \"summarize_scores_py\",\n      \"filePath\": \"python/branch_grade.py\",\n      \"language\": \"python\",\n      \"startLine\": 9,\n      \"endLine\": 14,\n      \"startColumn\": 0,\n      \"endColumn\": 17,\n      \"signature\": \"(scores: list[int]) -> dict[str, int]\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912574\n    },\n    \"score\": 95.05737690671552\n  }\n]\n",
+      "duration_sec": 0.333,
+      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:2c65442720cc7ae911ad9c12718c9fb9\",\n      \"kind\": \"function\",\n      \"name\": \"summarize_scores_py\",\n      \"qualifiedName\": \"summarize_scores_py\",\n      \"filePath\": \"python/branch_grade.py\",\n      \"language\": \"python\",\n      \"startLine\": 9,\n      \"endLine\": 14,\n      \"startColumn\": 0,\n      \"endColumn\": 17,\n      \"signature\": \"(scores: list[int]) -> dict[str, int]\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137087\n    },\n    \"score\": 95.05737690671552\n  }\n]\n",
       "stderr": "",
       "ok": true
     },
@@ -118,8 +118,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.363,
-      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"method:0e937c0e3d56bcfc54bdbad22071733a\",\n      \"kind\": \"method\",\n      \"name\": \"helperSquareJava\",\n      \"qualifiedName\": \"FunctionCallExample::helperSquareJava\",\n      \"filePath\": \"java/FunctionCallExample.java\",\n      \"language\": \"java\",\n      \"startLine\": 2,\n      \"endLine\": 4,\n      \"startColumn\": 4,\n      \"endColumn\": 5,\n      \"signature\": \"int (int value)\",\n      \"visibility\": \"public\",\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": true,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912573\n    },\n    \"score\": 110.17504662984189\n  }\n]\n",
+      "duration_sec": 0.377,
+      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"method:0e937c0e3d56bcfc54bdbad22071733a\",\n      \"kind\": \"method\",\n      \"name\": \"helperSquareJava\",\n      \"qualifiedName\": \"FunctionCallExample::helperSquareJava\",\n      \"filePath\": \"java/FunctionCallExample.java\",\n      \"language\": \"java\",\n      \"startLine\": 2,\n      \"endLine\": 4,\n      \"startColumn\": 4,\n      \"endColumn\": 5,\n      \"signature\": \"int (int value)\",\n      \"visibility\": \"public\",\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": true,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137085\n    },\n    \"score\": 110.17504662984189\n  }\n]\n",
       "stderr": "",
       "ok": true
     },
@@ -134,8 +134,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.345,
-      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"method:2dd938ee34a51515103fe4d420c91941\",\n      \"kind\": \"method\",\n      \"name\": \"sumSquaresJava\",\n      \"qualifiedName\": \"FunctionCallExample::sumSquaresJava\",\n      \"filePath\": \"java/FunctionCallExample.java\",\n      \"language\": \"java\",\n      \"startLine\": 6,\n      \"endLine\": 12,\n      \"startColumn\": 4,\n      \"endColumn\": 5,\n      \"signature\": \"int (int[] values)\",\n      \"visibility\": \"public\",\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": true,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912573\n    },\n    \"score\": 110.17504662984189\n  }\n]\n",
+      "duration_sec": 0.365,
+      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"method:2dd938ee34a51515103fe4d420c91941\",\n      \"kind\": \"method\",\n      \"name\": \"sumSquaresJava\",\n      \"qualifiedName\": \"FunctionCallExample::sumSquaresJava\",\n      \"filePath\": \"java/FunctionCallExample.java\",\n      \"language\": \"java\",\n      \"startLine\": 6,\n      \"endLine\": 12,\n      \"startColumn\": 4,\n      \"endColumn\": 5,\n      \"signature\": \"int (int[] values)\",\n      \"visibility\": \"public\",\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": true,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137085\n    },\n    \"score\": 110.17504662984189\n  }\n]\n",
       "stderr": "",
       "ok": true
     },
@@ -150,8 +150,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.357,
-      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:1a79a8b4ba8461c84659b34c42415c92\",\n      \"kind\": \"function\",\n      \"name\": \"normalizeNameTs\",\n      \"qualifiedName\": \"normalizeNameTs\",\n      \"filePath\": \"typescript/impactExample.ts\",\n      \"language\": \"typescript\",\n      \"startLine\": 1,\n      \"endLine\": 3,\n      \"startColumn\": 7,\n      \"endColumn\": 1,\n      \"signature\": \"(name: string): string\",\n      \"visibility\": null,\n      \"isExported\": true,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912576\n    },\n    \"score\": 95.19519267574073\n  }\n]\n",
+      "duration_sec": 0.344,
+      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:1a79a8b4ba8461c84659b34c42415c92\",\n      \"kind\": \"function\",\n      \"name\": \"normalizeNameTs\",\n      \"qualifiedName\": \"normalizeNameTs\",\n      \"filePath\": \"typescript/impactExample.ts\",\n      \"language\": \"typescript\",\n      \"startLine\": 1,\n      \"endLine\": 3,\n      \"startColumn\": 7,\n      \"endColumn\": 1,\n      \"signature\": \"(name: string): string\",\n      \"visibility\": null,\n      \"isExported\": true,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137088\n    },\n    \"score\": 95.19519267574073\n  }\n]\n",
       "stderr": "",
       "ok": true
     },
@@ -166,8 +166,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.342,
-      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:34b4b6d9fe7e66ded80dc673ef30475b\",\n      \"kind\": \"function\",\n      \"name\": \"buildGreetingTs\",\n      \"qualifiedName\": \"buildGreetingTs\",\n      \"filePath\": \"typescript/impactExample.ts\",\n      \"language\": \"typescript\",\n      \"startLine\": 5,\n      \"endLine\": 8,\n      \"startColumn\": 7,\n      \"endColumn\": 1,\n      \"signature\": \"(name: string): string\",\n      \"visibility\": null,\n      \"isExported\": true,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787737912576\n    },\n    \"score\": 95.19519267574073\n  }\n]\n",
+      "duration_sec": 0.358,
+      "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:34b4b6d9fe7e66ded80dc673ef30475b\",\n      \"kind\": \"function\",\n      \"name\": \"buildGreetingTs\",\n      \"qualifiedName\": \"buildGreetingTs\",\n      \"filePath\": \"typescript/impactExample.ts\",\n      \"language\": \"typescript\",\n      \"startLine\": 5,\n      \"endLine\": 8,\n      \"startColumn\": 7,\n      \"endColumn\": 1,\n      \"signature\": \"(name: string): string\",\n      \"visibility\": null,\n      \"isExported\": true,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1787741137088\n    },\n    \"score\": 95.19519267574073\n  }\n]\n",
       "stderr": "",
       "ok": true
     }
@@ -182,7 +182,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.322,
+      "duration_sec": 0.311,
       "stdout": "{\n  \"symbol\": \"sumSquaresJava\",\n  \"callees\": [\n    {\n      \"name\": \"helperSquareJava\",\n      \"kind\": \"method\",\n      \"filePath\": \"java/FunctionCallExample.java\",\n      \"startLine\": 2\n    }\n  ]\n}\n",
       "stderr": "",
       "ok": true
@@ -196,7 +196,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.342,
+      "duration_sec": 0.338,
       "stdout": "{\n  \"symbol\": \"helperSquareJava\",\n  \"callers\": [\n    {\n      \"name\": \"sumSquaresJava\",\n      \"kind\": \"method\",\n      \"filePath\": \"java/FunctionCallExample.java\",\n      \"startLine\": 6\n    }\n  ]\n}\n",
       "stderr": "",
       "ok": true
@@ -212,7 +212,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
       "returncode": 0,
-      "duration_sec": 0.348,
+      "duration_sec": 0.349,
       "stdout": "{\n  \"symbol\": \"normalizeNameTs\",\n  \"depth\": 2,\n  \"nodeCount\": 2,\n  \"edgeCount\": 1,\n  \"affected\": [\n    {\n      \"name\": \"normalizeNameTs\",\n      \"kind\": \"function\",\n      \"filePath\": \"typescript/impactExample.ts\",\n      \"startLine\": 1\n    },\n    {\n      \"name\": \"buildGreetingTs\",\n      \"kind\": \"function\",\n      \"filePath\": \"typescript/impactExample.ts\",\n      \"startLine\": 5\n    }\n  ]\n}\n",
       "stderr": "",
       "ok": true
@@ -221,15 +221,14 @@
       "command": [
         "codegraph",
         "explore",
-        "loop",
-        "--json"
+        "loop"
       ],
       "cwd": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
-      "returncode": 1,
-      "duration_sec": 0.154,
-      "stdout": "",
-      "stderr": "error: unknown option '--json'\n",
-      "ok": false
+      "returncode": 0,
+      "duration_sec": 0.369,
+      "stdout": "**Exploration: loop**\n\nFound 2 symbols across 1 file.\n\n**Blast radius — what depends on these (update/verify before editing)**\n\n- `loop_sum_c` (c/sum_loop.c:3) — 1 caller in `c/sum_loop.c`; ⚠️ no covering tests found\n\n**Source Code**\n\n> The code below is the **verbatim, current on-disk source** of these files — re-read from disk on this call and line-numbered, byte-for-byte identical to what the Read tool returns. It is NOT a summary, outline, or stale cache. Treat each block as a Read you have already performed: do not Read a file shown here.\n\n**`c/sum_loop.c`** — loop_sum_c(function), main(function)\n\n```c\n1\t#include <stdio.h>\n2\t\n3\tint loop_sum_c(int values[], int length) {\n4\t    int total = 0;\n5\t    for (int index = 0; index < length; index++) {\n6\t        total += values[index];\n7\t    }\n8\t    return total;\n9\t}\n10\t\n11\tint main(void) {\n12\t    int values[] = {1, 2, 3, 4};\n13\t    printf(\"%d\\n\", loop_sum_c(values, 4));\n14\t    return 0;\n15\t}\n```\n\n",
+      "stderr": "",
+      "ok": true
     }
   },
   "status_json": {
@@ -237,7 +236,7 @@
     "version": "1.5.0",
     "projectPath": "/content/-knowledge-state-reviewer/examples/codegraph_samples",
     "indexPath": "/content/-knowledge-state-reviewer/examples/codegraph_samples/.codegraph",
-    "lastIndexed": "2026-08-26T09:51:52.565Z",
+    "lastIndexed": "2026-08-26T10:45:37.079Z",
     "fileCount": 5,
     "nodeCount": 18,
     "edgeCount": 20,
@@ -320,7 +319,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer",
       "returncode": 0,
-      "duration_sec": 0.005,
+      "duration_sec": 0.008,
       "stdout": "v20.19.0\n",
       "stderr": "",
       "ok": true
@@ -332,7 +331,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer",
       "returncode": 0,
-      "duration_sec": 0.26,
+      "duration_sec": 0.845,
       "stdout": "10.8.2\n",
       "stderr": "",
       "ok": true
@@ -344,7 +343,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer",
       "returncode": 0,
-      "duration_sec": 0.151,
+      "duration_sec": 0.796,
       "stdout": "10.8.2\n",
       "stderr": "",
       "ok": true
@@ -358,8 +357,8 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer",
       "returncode": 0,
-      "duration_sec": 6.883,
-      "stdout": "\nadded 2 packages in 7s\n",
+      "duration_sec": 11.593,
+      "stdout": "\nadded 2 packages in 11s\n",
       "stderr": "",
       "ok": true
     },
@@ -370,7 +369,7 @@
       ],
       "cwd": "/content/-knowledge-state-reviewer",
       "returncode": 0,
-      "duration_sec": 0.198,
+      "duration_sec": 0.243,
       "stdout": "1.5.0\n",
       "stderr": "",
       "ok": true
