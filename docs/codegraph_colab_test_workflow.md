@@ -1,7 +1,17 @@
 # CodeGraph Colab Test Workflow
 
-この手順は、Colab 側では notebook を保存せず、セルを実行するだけで
+この手順は、Colab 側では notebook の変更を保存せず、セルを実行するだけで
 CodeGraph の IrealKG 証拠基盤としての有用性を確認するためのもの。
+
+GitHub から開けるノートブック:
+
+```text
+notebooks/codegraph_colab_test.ipynb
+```
+
+Colab のメニューでは「ファイル」->「ノートブックを開く」->「GitHub」で
+`KazuhTAKEH/-knowledge-state-reviewer` を指定し、
+`notebooks/codegraph_colab_test.ipynb` を選ぶ。
 
 ## 目的
 
